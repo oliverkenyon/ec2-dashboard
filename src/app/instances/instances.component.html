@@ -1,8 +1,38 @@
+<div>
+  <table mat-table [dataSource]="dataSource" matSort>
+      
+      <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Instance ID">
+          <mat-header-cell *matHeaderCellDef> Instance ID </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Type">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.type}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="State">
+          <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.state}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="AZ">
+        <mat-header-cell *matHeaderCellDef> AZ </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.az}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Public IP">
+          <mat-header-cell *matHeaderCellDef> Public IP </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.public-ip}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Private IPs">
+          <mat-header-cell *matHeaderCellDef> Private IPs </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.private-ips}} </mat-cell>
+      </ng-container>
 
-<div *ngFor="let instance of instances">
-    <h2>{{instance.id}}</h2>
-  
-      <p>
-        {{instance.type}}
-      </p>
+    <mat-header-row *matHeaderRowDef="['name', 'Instance ID', 'Type', 'State', 'AZ', 'Public IP', 'Private IPs']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['name', 'Instance ID', 'Type', 'State', 'AZ', 'Public IP', 'Private IPs']"></mat-row>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

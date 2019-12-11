@@ -7,13 +7,12 @@ app.use(cors());
 
 const port = 3000
 
-const randomName = faker.name.findName();
-
 let instancesList = []
 
 const instanceCount = 10
 for (let index = 0; index < instanceCount; index++) {
     instancesList.push({
+        'name': faker.name.findName(),
         'id': 'id123',
         'type': 't2-medium',
         'state': 'RUNNING',
