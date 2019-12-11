@@ -9,16 +9,20 @@ const port = 3000
 
 let instancesList = []
 
-const instanceCount = 10
+let instanceTypes = ['a1.medium', 'a1.large', 't3.micro', 't3.small', 't2.micro', 't2.nano', 'm4.large']
+let instanceStates = ['pending', 'rebooting', 'running', 'shutting-down', 'stopping', 'stopped', 'terminated']
+let availabilityZones = ['us-east-1a', 'us-east-1b', 'eu-west-1a', 'ec-west-1b']
+
+const instanceCount = 50000
 for (let index = 0; index < instanceCount; index++) {
     instancesList.push({
         'name': faker.name.findName(),
-        'id': 'id123',
-        'type': 't2-medium',
-        'state': 'RUNNING',
-        'az': 'us-east-1b',
-        'public-ip': '56.78.18.123',
-        'private-ips': ['192.168.1.23', '10.1.15.23']
+        'id': 'i-' + faker.random.alphaNumeric(10), 
+        'type': faker.random.arrayElement(instanceTypes),
+        'state': faker.random.arrayElement(instanceStates),
+        'az': faker.random.arrayElement(availabilityZones),
+        'public-ip': faker.internet.ip(),
+        'private-ips': [faker.internet.ip(), faker.internet.ip()]
     })
 }
  
