@@ -4,7 +4,8 @@
   "description": "Basic back end serving fake EC2 data",
   "main": "api.js",
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "start": "node api.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,9 @@
   "devDependencies": {
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
+  },
+  "engines": {
+    "node": "12.13.1",
+    "npm": "3.10.10"
   }
 }
