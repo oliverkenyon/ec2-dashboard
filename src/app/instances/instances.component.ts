@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { ApiService } from '../api.service';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatInput } from '@angular/material/input';
 import { MatPaginator } from '@angular/material/paginator';
 import { fromEvent } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
@@ -55,8 +54,6 @@ export class InstancesComponent implements OnInit, AfterViewInit {
   }
 
   updateDataSource(data: any) {
-    console.log(data);
-
     this.instances = data
     this.dataSource = new MatTableDataSource(this.instances);
     this.dataSource.sort = this.sort;
