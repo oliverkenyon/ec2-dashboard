@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api_base: 'http://localhost:3000/api/v1'
+  api_base: 'https://ec2-api.herokuapp.com/api/v1/instances'
 };
