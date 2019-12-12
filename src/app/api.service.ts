@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getInstances() {
-    return this.httpClient.get(`${API_BASE}/instances`);
+  public getInstances(searchValue: String) {
+    return this.httpClient.get(`${API_BASE}/instances?searchValue=${searchValue}`);
   }
 }

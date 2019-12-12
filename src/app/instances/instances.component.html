@@ -1,4 +1,8 @@
-<div>
+<div [className]="'instances-container'">
+  <mat-form-field>
+      <input #search matInput placeholder="Search">
+  </mat-form-field>
+
   <table mat-table [dataSource]="dataSource" matSort>
       
       <ng-container matColumnDef="name">
@@ -23,11 +27,11 @@
       </ng-container>
       <ng-container matColumnDef="public-ip">
           <mat-header-cell *matHeaderCellDef> Public IP </mat-header-cell>
-          <mat-cell *matCellDef="let row"> {{row.public-ip}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.ips.public}} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="private-ips">
           <mat-header-cell *matHeaderCellDef> Private IPs </mat-header-cell>
-          <mat-cell *matCellDef="let row"> {{row.private-ips}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.ips.private}} </mat-cell>
       </ng-container>
 
     <mat-header-row *matHeaderRowDef="['name', 'id', 'type', 'state', 'az', 'public-ip', 'private-ips']"></mat-header-row>
