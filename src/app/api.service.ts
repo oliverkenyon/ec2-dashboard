@@ -14,8 +14,6 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   public getInstances(searchValue: String) {
-    console.log("Get instances called with: " + searchValue)
-
     return this.httpClient.get(`${API_BASE}/instances?searchValue=${searchValue}`);
   }
 }
