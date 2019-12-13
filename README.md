@@ -20,3 +20,9 @@ The frontend tests use Jasmine/Karma, because this is what you get out of the bo
 ```
 ng test
 ```
+
+To run the end to end tests. The API server should be started locally first, then:
+
+```
+ng e2e
+```

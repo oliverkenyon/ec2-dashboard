@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display page with empty search box at top', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('dashboard app is running!');
+    expect(page.getSearchPlaceholder()).toEqual('Search');
   });
 
   afterEach(async () => {
