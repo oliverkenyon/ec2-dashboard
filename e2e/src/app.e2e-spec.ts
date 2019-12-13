@@ -14,6 +14,11 @@ describe('workspace-project App', () => {
     expect(page.getSearchText()).toEqual('');
   });
 
+  it('should display non-empty list of ec2 instances', () => {
+    page.navigateTo();
+    expect(page.ec2TableHasRows()).toBeTruthy();
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);

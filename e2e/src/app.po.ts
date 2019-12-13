@@ -12,4 +12,8 @@ export class AppPage {
   getSearchText() {
     return element(by.css('app-root .content app-instances input')).getText() as Promise<string>;
   }
+
+  ec2TableHasRows() {
+    return element(by.css('app-root .content app-instances table tbody .mat-row')).isPresent() as Promise<boolean>;
+  }
 }
