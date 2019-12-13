@@ -11,6 +11,7 @@ describe('workspace-project App', () => {
   it('should display page with empty search box at top', () => {
     page.navigateTo();
     expect(page.getSearchPlaceholder()).toEqual('Search');
+    expect(page.getSearchText()).toEqual('');
   });
 
   afterEach(async () => {

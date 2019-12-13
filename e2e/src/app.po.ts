@@ -8,4 +8,8 @@ export class AppPage {
   getSearchPlaceholder() {
     return element(by.css('app-root .content app-instances input')).getAttribute('placeholder') as Promise<string>;
   }
+
+  getSearchText() {
+    return element(by.css('app-root .content app-instances input')).getText() as Promise<string>;
+  }
 }
